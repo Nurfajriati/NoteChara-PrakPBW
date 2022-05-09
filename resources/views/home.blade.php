@@ -14,32 +14,8 @@
 </style> -->
 </head>
 <body>
-<nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: #5f4f34;">
-  <div class="container fluid">
-  <!-- Brand -->
-  <span class="navbar-brand mb-0 h1">NoteChara</span>
-  <!-- Links -->
-</div>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="collapsibleNavbar">
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-      <a class="nav-link" href="#" ><b>Home</b></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><b>Sinopsis</b></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#"><b>Character</b></a>
-      </li>
-    <li class ="nav-item">
-        <a class="nav-link" href="#"><b>Done</b><a>
-  </ul>
-  </div>
-</nav>
-<br><br>
+@extends('template')
+<div>
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -49,7 +25,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="https://ae01.alicdn.com/kf/HTB1lwnDvQCWBuNjy0Faq6xUlXXaQ/Rumah-Kolam-DIY-Lukisan-dengan-Angka-Pemandangan-Vintage-Dinding-Lukisan-Akrilik-Cat-Di-Atas-Kanvas-untuk.jpg"  width="100%" height="700">
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption d-none d-md-block" >
         <h5><b>SMART<b></h5>
         <p><b><i>Study more and you will be the number one!<i><b></p>
       </div>
@@ -71,10 +47,10 @@
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+    <!-- <span class="visually-hidden">Previous</span> -->
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+    <!-- <span class="visually-hidden">Next</span> -->
   </button>
 </div>
