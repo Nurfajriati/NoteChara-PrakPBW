@@ -9,10 +9,10 @@ class CharaController extends Controller
 {
     public function readdata()
     {
-        //mau ambil data dari tabel mahasiswa
+        //mau ambil data dari tabel notechara
         $chara= DB::table('notechara')->get();
 
-        // mengirim ke halaman mahasiswa untuk ditampilkan data
+        // mengirim ke halaman notechara untuk ditampilkan data
         return view('done',['notechara'=>$chara]);
     }
 
@@ -34,10 +34,10 @@ class CharaController extends Controller
         return redirect('/Done');
     }
 
-    public function edit($judul)
+    public function edit($nama)
     {
-        #ambil data mahasiswa berdasarkan nim
-        $chara = DB::table('notechara')->where('judul', $judul)->get();
+        #ambil data berdasarkan nama
+        $chara = DB::table('notechara')->where('nama', $nama)->get();
 
         #passing data
         return view('edit', ['notechara' => $chara]);
