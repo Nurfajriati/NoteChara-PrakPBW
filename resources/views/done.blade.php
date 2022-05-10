@@ -15,3 +15,32 @@
 <body>
 @extends('template')
 @section('konten')
+<br><br><br>
+<div class="text-center">
+<img src="https://cdn.pixabay.com/photo/2019/05/14/21/50/storytelling-4203628_960_720.jpg" class="card-img-top" style="height: 30rem;" alt="...">
+  @foreach($sinopsis as $sin)
+<div class="card" style="width: 100rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{$sin->judul}}</h5>
+    <p class="card-text">{{$sin->sinopsis}}</p>
+    <a href="/notesinopsis/edit/{{ $sin->judul}}"class="card-link">Ubah</a>
+    <a href="/notesinopsis/hapus/{{ $sin->judul}}" class="card-link">Delete</a>
+  </div>
+</div>
+@endforeach
+  <br><br>
+  @foreach($chara as $c)
+<div class="card" style="width: 100rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{$c->nama}}</h5>
+    <p class="card-text">{{$c->gender}}</p>
+    <p class="card-text">{{$c->watak}}</p>
+    <p class="card-text">{{$c->latarbelakang}}</p>
+    <a href="/notesinopsis/edit/{{ $c->nama}}"class="card-link">Ubah</a>
+    <a href="/notesinopsis/hapus/{{ $c->nama}}" class="card-link">Delete</a>
+  </div>
+
+</div>
+@endforeach
+</div>
+@endsection

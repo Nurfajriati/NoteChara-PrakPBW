@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SinopsisController;
+use App\Http\Controllers\CharaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,4 +30,26 @@ Route::get('/Done', function () {
     return view('done');
 });
 
-Route::get('/Sinopsis', [SinopsisController::class, 'readdata']);
+Route::get('/inputs', function () {
+    return view('input');
+});
+
+Route::get('/inputc', function () {
+    return view('input');
+});
+
+Route::get('/Done', [SinopsisController::class, 'readdata']);
+Route::get('/inputs', [SinopsisController::class, 'input']);
+Route::get('/notesinopsis/store', [SinopsisController::class, 'store']);
+
+Route::get('/notesinopsis/edit/{judul}', [SinopsisController::class, 'edit']);
+Route::get('/notesinopsis/update', [SinopsisController::class, 'update']);
+Route::get('/notesinopsis/hapus/{judul}', [SinopsisController::class,'hapus']);
+
+Route::get('/Done', [CharaController::class, 'readdata']);
+Route::get('/inputc', [CharaController::class, 'input']);
+Route::get('/notechara/store', [CharaController::class, 'store']);
+
+Route::get('/notechara/edit/{nama}', [CharaController::class, 'edit']);
+Route::get('/notechara/update', [CharaController::class, 'update']);
+Route::get('/notechara/hapus/{nama}', [CharaController::class,'hapus']);

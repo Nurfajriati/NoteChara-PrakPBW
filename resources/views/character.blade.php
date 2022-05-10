@@ -15,7 +15,12 @@
 <body>
 @extends('template')
 @section('konten')
+<br><br><br>
 <div class="text-center">
 <img src="https://p4.wallpaperbetter.com/wallpaper/770/981/90/fantasy-lscape-2-green-forest-painting-wallpaper-preview.jpg" class="img-fluid-center" alt="...">
 <br><br><br>
-
+<div class="mt-4 p-5 text-black rounded" style="background-color: #e2dbcb;">
+  <a href="/inputc" class="btn btn-outline-success">Start</a>
+</div>
+</div>
+@endsection
