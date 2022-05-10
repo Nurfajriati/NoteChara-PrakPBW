@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SinopsisController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,4 +29,4 @@ Route::get('/Done', function () {
     return view('done');
 });
 
-Route::get('/done', 'SinopsisController@readdata');
+Route::get('/Sinopsis', [SinopsisController::class, 'readdata']);

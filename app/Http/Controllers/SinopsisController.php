@@ -10,15 +10,15 @@ class SinopsisController extends Controller
     public function readdata()
     {
         //mau ambil data dari tabel mahasiswa
-        $sinopsis= DB::table('notesinopsis')->get();
+        $sin= DB::table('notesinopsis')->get();
 
         // mengirim ke halaman mahasiswa untuk ditampilkan data
-        return view('sinopsis',['notesinopsis'=>$sinopsis]);
+        return view('sinopsis',['notesinopsis'=>$sin]);
     }
 
     public function input()
     {
-        return view('sinopsis');
+        return view('inputs');
     }
 
     public function store(Request $request)
@@ -29,6 +29,6 @@ class SinopsisController extends Controller
             'sinopsis' => $request->sinopsis,
         ]);
 
-        return redirect('/sinopsis');
+        return redirect('/Sinopsis');
     }
 }

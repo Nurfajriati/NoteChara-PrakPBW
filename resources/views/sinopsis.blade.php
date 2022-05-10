@@ -20,7 +20,7 @@
 <img src="https://w7.pngwing.com/pngs/413/139/png-transparent-books-background-books-retro-library.png" class="img-fluid-center" alt="...">
 <br><br><br>
 <div class="mt-4 p-5 text-black rounded" style="background-color: #e2dbcb;">
-  <h1>{{$sinopsis->judul}}</h1>
-  <p>{{$sinopsis->sinopsis}}</p>
+  <h1>{{$sin->judul}}</h1>
+  <p>{{$sin->sinopsis}}</p>
 </div>
 </div>
