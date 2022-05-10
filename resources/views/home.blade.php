@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>NoteChara</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +14,7 @@
 </head>
 <body>
 @extends('template')
+@section('konten')
 <div>
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -53,4 +53,5 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <!-- <span class="visually-hidden">Next</span> -->
   </button>
+  @endsection
 </div>

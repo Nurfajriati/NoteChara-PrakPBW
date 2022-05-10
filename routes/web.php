@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/Sinopsis', function () {
+    return view('sinopsis');
+});
+
+Route::get('/Character', function () {
+    return view('character');
+});
+
+Route::get('/Done', function () {
+    return view('done');
+});
+
+Route::get('/done', 'SinopsisController@readdata');
