@@ -26,7 +26,6 @@ Route::get('/Character', function () {
     return view('character');
 });
 
-
 Route::get('/inputs', function () {
     return view('input');
 });
@@ -40,13 +39,13 @@ Route::get('/inputs', [SinopsisController::class, 'input']);
 Route::post('/notesinopsis/store', [SinopsisController::class, 'store']);
 
 Route::get('/notesinopsis/edit/{judul}', [SinopsisController::class, 'edit']);
-Route::get('/notesinopsis/update', [SinopsisController::class, 'update']);
-Route::get('/notesinopsis/hapus/{judul}', [SinopsisController::class,'hapus']);
+Route::post('/notesinopsis/update', [SinopsisController::class, 'update']);
+Route::get('/notesinopsis/hapus/{judul}', [SinopsisController::class, 'hapus']);
 
 // // Route::get('/Done', [CharaController::class, 'readdata']);
 Route::get('/inputc', [CharaController::class, 'input']);
 Route::get('/notechara/store', [CharaController::class, 'store']);
 
 Route::get('/notechara/edit/{nama}', [CharaController::class, 'edit']);
-Route::get('/notechara/update', [CharaController::class, 'update']);
-Route::get('/notechara/hapus/{nama}', [CharaController::class,'hapus']);
+Route::post('/notechara/update', [CharaController::class, 'update']);
+Route::get('/notechara/hapus/{nama}', [CharaController::class, 'hapus']);

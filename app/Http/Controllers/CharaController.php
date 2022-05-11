@@ -37,10 +37,13 @@ class CharaController extends Controller
     public function edit($nama)
     {
         #ambil data berdasarkan nama
-        $chara = DB::table('notechara')->where('nama', $nama)->get();
-
+        $chara = DB::table('notechara')
+            ->select('nama', 'gender', 'watak', 'latarbelakang')
+            ->where('nama',$nama)
+            ->get();
+        $chara = json_decode($chara, true);
         #passing data
-        return view('edit', ['notechara' => $chara]);
+        return view('editc', ['chara' => $chara]);
     }
 
     public function update(Request $request)

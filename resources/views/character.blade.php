@@ -17,8 +17,11 @@
 @section('konten')
 <br><br><br>
 <div class="text-center">
+<div class="img-caption d-none d-md-block">
 <img src="https://p4.wallpaperbetter.com/wallpaper/770/981/90/fantasy-lscape-2-green-forest-painting-wallpaper-preview.jpg" class="img-fluid-center" alt="...">
-<br><br><br>
+        <h5><b>IMAGINATION<b></h5>
+        <p><b><i>Your imagination is your fantasy!<b><i></p>
+</div>
 <div class="mt-4 p-5 text-black rounded" style="background-color: #e2dbcb;">
   <a href="/inputc" class="btn btn-outline-success">Start</a>
 </div>

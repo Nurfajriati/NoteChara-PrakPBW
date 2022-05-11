@@ -9,23 +9,19 @@ class SinopsisController extends Controller
 {
     public function readdata()
     {
-       $select = DB::table('notechara')
-       ->select('nama',
-       'gender',
-       'watak',
-       'latarbelakang')
-       ->get();
-       $select = json_decode($select, true);
+        $select = DB::table('notechara')
+            ->select('nama', 'gender', 'watak', 'latarbelakang')
+            ->get();
+        $select = json_decode($select, true);
 
-       $sinopsis = DB::table('notesinopsis')
-       ->select('judul',
-       'sinopsis')
-       ->get();
-       $sinopsis = json_decode($sinopsis, true);
-       
-        return view('done',[
+        $sinopsis = DB::table('notesinopsis')
+            ->select('judul', 'sinopsis')
+            ->get();
+        $sinopsis = json_decode($sinopsis, true);
+
+        return view('done', [
             'selectN' => $select,
-            'sinopsis' => $sinopsis
+            'sinopsis' => $sinopsis,
         ]);
     }
 
@@ -48,29 +44,35 @@ class SinopsisController extends Controller
     public function edit($judul)
     {
         #ambil data berdasarkan judul
-        $sinopsis = DB::table('notesinopsis')
-        ->select('judul',
-        'sinopsis')->where('judul', $judul)->get();
-        $sinopsis = json_decode($sinopsis, true);
+        $editSinopsis = DB::table('notesinopsis')
+            ->select('judul', 'sinopsis')
+            ->where('judul', $judul)
+            ->get();
+        $editSinopsis = json_decode($editSinopsis, true);
         #passing data
-        return view('edit', ['notesinopsis' => $sinopsis]);
+        return view('edit', [
+            'notesinopsis' => $editSinopsis,
+            'judul' => $judul,
+        ]);
     }
 
     public function update(Request $request)
     {
-        DB::table('notesinopsis')->where('judul', $request->judul)->update([
-            'judul' => $request->judul,
-            'sinopsis' => $request->sinopsis,
-        ]);
+        DB::table('notesinopsis')
+            ->where('judul', $request->judul)
+            ->update([
+                'judul' => $request->judul,
+                'sinopsis' => $request->sinopsis,
+            ]);
 
         return redirect('/Done');
     }
 
     public function hapus($judul)
     {
-        DB::table('notesinopsis')->where('judul', $judul)->delete();
+        DB::table('notesinopsis')
+            ->where('judul', $judul)
+            ->delete();
         return redirect('/Done');
     }
-
-
 }

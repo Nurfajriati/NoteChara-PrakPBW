@@ -15,10 +15,13 @@
 <body>
 @extends('template')
 @section('konten')
-<br><br><br><br>
+<br><br>
 <div class="text-center">
+<div class="img-caption d-none d-md-block">
 <img src="https://w7.pngwing.com/pngs/413/139/png-transparent-books-background-books-retro-library.png" class="img-fluid-center" alt="...">
-<br><br><br>
+        <h5><b>WRITE<b></h5>
+        <p><b><i>Write it just like you make your own world!<b><i></p>
+      </div>
 <div class="mt-4 p-5 text-black rounded" style="background-color: #e2dbcb;">
   <a href="/inputs" class="btn btn-outline-success">Start</a>
 </div>
