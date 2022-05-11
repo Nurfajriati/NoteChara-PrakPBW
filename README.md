@@ -1,5 +1,5 @@
 ## About NoteChara
-    NoteChara merupakan aplikasi web yang akan membantu penulis untuk melaksanakan tugasnya sebagai penulis cerita, novel, dan sebagainya. Pada web ini dapat menginput judul dan sinopsis dari suatu cerita yang akan dibuat. Serta terdapat inputan untuk character-character yang akan dimasukkan pada cerita.
+NoteChara merupakan aplikasi web yang akan membantu penulis untuk melaksanakan tugasnya sebagai penulis cerita, novel, dan sebagainya. Pada web ini dapat menginput judul dan sinopsis dari suatu cerita yang akan dibuat. Serta terdapat inputan untuk character-character yang akan dimasukkan pada cerita.
 
 # How to Use ⚙
 
