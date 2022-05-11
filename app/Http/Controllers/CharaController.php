@@ -10,10 +10,10 @@ class CharaController extends Controller
     public function readdata()
     {
         //mau ambil data dari tabel notechara
-        $chara= DB::table('notechara')->get();
+        // $chara= DB::table('notechara')->get();
 
-        // mengirim ke halaman notechara untuk ditampilkan data
-        return view('done',['notechara'=>$chara]);
+        // // mengirim ke halaman notechara untuk ditampilkan data
+        return view('done');
     }
 
     public function input()

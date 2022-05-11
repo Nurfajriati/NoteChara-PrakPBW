@@ -1,6 +1,6 @@
 @extends('template')
 @section('konten')
-<form action="/notesinopsis/store" method ="get">
+<form action="/notesinopsis/store" method ="post">
         {{csrf_field()}}
         <label for="fjudul">Judul</label><br>
         <input type="text" id="fjudul" name="judul" required="required"><br>

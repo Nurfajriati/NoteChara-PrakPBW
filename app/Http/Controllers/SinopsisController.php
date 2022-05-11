@@ -9,11 +9,24 @@ class SinopsisController extends Controller
 {
     public function readdata()
     {
-        //mau ambil data dari tabel notesinopsis
-        $sinopsis= DB::table('notesinopsis')->get();
+       $select = DB::table('notechara')
+       ->select('nama',
+       'gender',
+       'watak',
+       'latarbelakang')
+       ->get();
+       $select = json_decode($select, true);
 
-        // mengirim ke halaman done untuk ditampilkan data
-        return view('done',['notesinopsis'=>$sinopsis]);
+       $sinopsis = DB::table('notesinopsis')
+       ->select('judul',
+       'sinopsis')
+       ->get();
+       $sinopsis = json_decode($sinopsis, true);
+       
+        return view('done',[
+            'selectN' => $select,
+            'sinopsis' => $sinopsis
+        ]);
     }
 
     public function input()
@@ -35,8 +48,10 @@ class SinopsisController extends Controller
     public function edit($judul)
     {
         #ambil data berdasarkan judul
-        $sinopsis = DB::table('notesinopsis')->where('judul', $judul)->get();
-
+        $sinopsis = DB::table('notesinopsis')
+        ->select('judul',
+        'sinopsis')->where('judul', $judul)->get();
+        $sinopsis = json_decode($sinopsis, true);
         #passing data
         return view('edit', ['notesinopsis' => $sinopsis]);
     }

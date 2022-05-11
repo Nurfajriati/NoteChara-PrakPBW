@@ -26,9 +26,6 @@ Route::get('/Character', function () {
     return view('character');
 });
 
-Route::get('/Done', function () {
-    return view('done');
-});
 
 Route::get('/inputs', function () {
     return view('input');
@@ -40,13 +37,13 @@ Route::get('/inputc', function () {
 
 Route::get('/Done', [SinopsisController::class, 'readdata']);
 Route::get('/inputs', [SinopsisController::class, 'input']);
-Route::get('/notesinopsis/store', [SinopsisController::class, 'store']);
+Route::post('/notesinopsis/store', [SinopsisController::class, 'store']);
 
 Route::get('/notesinopsis/edit/{judul}', [SinopsisController::class, 'edit']);
 Route::get('/notesinopsis/update', [SinopsisController::class, 'update']);
 Route::get('/notesinopsis/hapus/{judul}', [SinopsisController::class,'hapus']);
 
-Route::get('/Done', [CharaController::class, 'readdata']);
+// // Route::get('/Done', [CharaController::class, 'readdata']);
 Route::get('/inputc', [CharaController::class, 'input']);
 Route::get('/notechara/store', [CharaController::class, 'store']);
 

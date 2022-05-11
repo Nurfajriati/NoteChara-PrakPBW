@@ -18,28 +18,29 @@
 <br><br><br>
 <div class="text-center">
 <img src="https://cdn.pixabay.com/photo/2019/05/14/21/50/storytelling-4203628_960_720.jpg" class="card-img-top" style="height: 30rem;" alt="...">
-  @foreach
-<div class="card" style="width: 100rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{$sinopsis->judul}}</h5>
-    <p class="card-text">{{$sinopsis->sinopsis}}</p>
-    <a href="/notesinopsis/edit/{{ $sin->judul}}"class="card-link">Ubah</a>
-    <a href="/notesinopsis/hapus/{{ $sin->judul}}" class="card-link">Delete</a>
-  </div>
-</div>
-@endforeach
+@foreach ($sinopsis as $sinopsis)
   <br><br>
-@foreach
 <div class="card" style="width: 100rem;">
   <div class="card-body">
-    <h5 class="card-title">{{$chara->nama}}</h5>
-    <p class="card-text">{{$chara->gender}}</p>
-    <p class="card-text">{{$chara->watak}}</p>
-    <p class="card-text">{{$chara->latarbelakang}}</p>
-    <a href="/notesinopsis/edit/{{ $c->nama}}"class="card-link">Ubah</a>
-    <a href="/notesinopsis/hapus/{{ $c->nama}}" class="card-link">Delete</a>
+    <h5 class="card-title">{{$sinopsis['judul']}}</h5>
+    <p class="card-text">{{$sinopsis['sinopsis']}}</p>
+    <a href="/notesinopsis/edit/{{$sinopsis['judul']}}"class="card-link">Ubah</a>
+    <a href="/notesinopsis/hapus/{{$sinopsis['judul']}}" class="card-link">Delete</a>
   </div>
 </div>
 @endforeach
 </div>
+ @foreach ($selectN as $chara)
+  <br><br>
+<div class="card" style="width: 100rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{$chara['nama']}}</h5>
+    <p class="card-text">{{$chara['gender']}}</p>
+    <p class="card-text">{{$chara['watak']}}</p>
+    <p class="card-text">{{$chara['latarbelakang']}}</p>
+    <a href="/notesinopsis/edit/{{$chara['nama']}}"class="card-link">Ubah</a>
+    <a href="/notesinopsis/hapus/{{$chara['nama']}}" class="card-link">Delete</a>
+  </div>
+</div>
+@endforeach
 @endsection
